@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-27T14:22:01Z",
+  "title": "Design System: CrossFit Naga",
+  "extensions": {
+    "colorMeta": {
+      "lacquer": { "role": "neutral", "displayName": "Lacquer", "canonical": "#0c1a12", "tonalRamp": ["#183424", "#2b5e41", "#3f885e", "#54b07b", "#7ec39c", "#a8d7bc", "#d2eadc", "#eef7f2"] },
+      "forest": { "role": "neutral", "displayName": "Forest", "canonical": "#11241a", "tonalRamp": ["#193426", "#2c5e44", "#408762", "#55af80", "#7fc29f", "#a8d6be", "#d2eadd", "#eef7f2"] },
+      "pine": { "role": "neutral", "displayName": "Pine", "canonical": "#1a3d29", "tonalRamp": ["#173624", "#296141", "#3b8b5e", "#50b47b", "#7bc79b", "#a6d9bc", "#d1ebdc", "#edf7f2"] },
+      "naga": { "role": "primary", "displayName": "Naga Green", "canonical": "#466a41", "tonalRamp": ["#1f2f1d", "#385534", "#517b4c", "#6ba064", "#90b78a", "#b4cfb0", "#d8e6d6", "#f0f5ef"] },
+      "naga-deep": { "role": "primary", "displayName": "Naga Deep", "canonical": "#3a5a36", "tonalRamp": ["#1f301d", "#375634", "#507c4b", "#6aa163", "#8eb889", "#b3cfaf", "#d7e6d6", "#f0f5ef"] },
+      "sage": { "role": "neutral", "displayName": "Sage", "canonical": "#90a586", "tonalRamp": ["#242c21", "#414f3b", "#5e7255", "#7c9470", "#9caf93", "#bcc9b6", "#dce3d9", "#f2f4f0"] },
+      "sage-lit": { "role": "neutral", "displayName": "Sage Lit", "canonical": "#c3d5b2", "tonalRamp": ["#26321b", "#445931", "#638146", "#81a75d", "#a0bc85", "#bfd2ac", "#dee8d4", "#f2f6ee"] },
+      "cream": { "role": "neutral", "displayName": "Cream", "canonical": "#fbf7dc", "tonalRamp": ["#453d08", "#7c6d0e", "#b29e14", "#e5cc1f", "#ecd856", "#f2e58d", "#f8f1c3", "#fcfae8"] },
+      "cream-dim": { "role": "neutral", "displayName": "Cream Dim", "canonical": "#d9dcc0", "tonalRamp": ["#2f311b", "#545931", "#7a8047", "#9ea65e", "#b6bc86", "#ced1ad", "#e5e7d4", "#f5f6ef"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#f4efd2", "tonalRamp": ["#3d370f", "#6f621b", "#a08e27", "#ceb836", "#dac967", "#e6db99", "#f2ecca", "#faf8eb"] },
+      "paper-2": { "role": "neutral", "displayName": "Paper 2", "canonical": "#e9e3c1", "tonalRamp": ["#383314", "#665c24", "#938534", "#beac47", "#cec074", "#ded4a1", "#eee9ce", "#f8f6ec"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0f2016", "tonalRamp": ["#183424", "#2c5e40", "#3f875d", "#55af7a", "#7fc39b", "#a8d6bb", "#d2eadc", "#eef7f1"] },
+      "ink-soft": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#2c4630", "tonalRamp": ["#1e2f20", "#35553a", "#4d7a54", "#669f6e", "#8bb692", "#b1ceb5", "#d6e5d9", "#eff5f0"] },
+      "gold": { "role": "secondary", "displayName": "Temple Gilt", "canonical": "#c9a44c", "tonalRamp": ["#3b2f12", "#6a5420", "#99792e", "#c59d3f", "#d3b56e", "#e1cd9d", "#f0e5cc", "#f9f5eb"] },
+      "neon": { "role": "tertiary", "displayName": "Neon Spark", "canonical": "#eef25c", "tonalRamp": ["#454706", "#7c800a", "#b4b80f", "#e7ed18", "#edf150", "#f3f689", "#f9fac2", "#fdfde7"] },
+      "neon-hot": { "role": "tertiary", "displayName": "Neon Spark Hover", "canonical": "#f7fa8a", "tonalRamp": ["#474903", "#818406", "#babf08", "#eff50f", "#f3f74a", "#f7fa85", "#fbfcbf", "#fdfee7"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero title, closing headline. Uppercase, condensed, tightest line-height on the page." },
+      "headline": { "displayName": "Headline", "purpose": "Every section's h2 title." },
+      "title": { "displayName": "Title", "purpose": "Stair-step headings, class program names, branch names." },
+      "body": { "displayName": "Body", "purpose": "All paragraph copy. Never set uppercase." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav links, tags, chips, coach roles." }
+    },
+    "shadows": [
+      { "name": "rail-rider-drop", "value": "drop-shadow(0 2px 6px rgba(0,0,0,0.6))", "purpose": "Under the naga mark riding the climb rail." },
+      { "name": "emblem-drop", "value": "drop-shadow(0 30px 50px rgba(0,0,0,0.5))", "purpose": "Under the rotated naga emblem beside the closing headline." },
+      { "name": "dock-lift", "value": "0 10px 30px -10px rgba(0,0,0,0.6)", "purpose": "Under the fixed mobile CTA dock." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.19, 1, 0.22, 1)", "purpose": "Default easing for entrances, hovers, and transform transitions." },
+      { "name": "ease-in-out-cubic", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "Clip-path reveals and the classes stage crossfade." }
+    ],
+    "breakpoints": [
+      { "name": "chip-stack", "value": "480px" },
+      { "name": "dock", "value": "700px" },
+      { "name": "sheet-menu", "value": "960px" },
+      { "name": "classes-stack", "value": "860px" },
+      { "name": "timetable-tabs", "value": "980px" },
+      { "name": "rail", "value": "1180px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Neon-filled CTA, the only button carrying the spark color. Used for every 'Book a class' link.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Book a class<svg class=\"ds-i\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h13M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.6em; min-height: 52px; padding: 0 1.4em; border-radius: 4px; background: #eef25c; color: #0f2016; font-family: \"Anuphan\", system-ui, sans-serif; font-weight: 600; font-size: 1rem; text-decoration: none; white-space: nowrap; transition: transform 160ms cubic-bezier(0.19,1,0.22,1), background-color 200ms ease; } .ds-btn-primary .ds-i { width: 1.15em; height: 1.15em; transition: transform 300ms cubic-bezier(0.19,1,0.22,1); } .ds-btn-primary:hover { background: #f7fa8a; } .ds-btn-primary:hover .ds-i { transform: translateX(3px); } .ds-btn-primary:active { transform: scale(0.97); } .ds-btn-primary:focus-visible { outline: 2px solid #eef25c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Translucent cream button for the LINE chat action, used over video and photo.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\"><svg class=\"ds-i\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3.5c-5 0-9 3.2-9 7.2 0 3.6 3.2 6.6 7.6 7.1l-.4 2.7c-.1.5.4.8.8.5l3.8-3.4c3.6-.7 6.2-3.6 6.2-6.9 0-4-4-7.2-9-7.2Z\" fill=\"currentColor\"/></svg>Chat on LINE</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 0.6em; min-height: 52px; padding: 0 1.4em; border-radius: 4px; background: rgba(251,247,220,0.08); color: #fbf7dc; font-family: \"Anuphan\", system-ui, sans-serif; font-weight: 600; font-size: 1rem; text-decoration: none; box-shadow: inset 0 0 0 1.5px rgba(251,247,220,0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: transform 160ms cubic-bezier(0.19,1,0.22,1), background-color 200ms ease; } .ds-btn-ghost .ds-i { width: 1.15em; height: 1.15em; } .ds-btn-ghost:hover { background: rgba(251,247,220,0.18); } .ds-btn-ghost:active { transform: scale(0.97); } .ds-btn-ghost:focus-visible { outline: 2px solid #eef25c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Solid dark button for CTAs on the paper (Prices) band.",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\">Choose a plan<svg class=\"ds-i\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h13M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; justify-content: center; gap: 0.6em; min-height: 52px; padding: 0 1.4em; border-radius: 4px; background: #0f2016; color: #fbf7dc; font-family: \"Anuphan\", system-ui, sans-serif; font-weight: 600; font-size: 1rem; text-decoration: none; transition: transform 160ms cubic-bezier(0.19,1,0.22,1), background-color 200ms ease; } .ds-btn-ink .ds-i { width: 1.15em; height: 1.15em; } .ds-btn-ink:hover { background: #1a3d29; } .ds-btn-ink:active { transform: scale(0.97); } .ds-btn-ink:focus-visible { outline: 2px solid #eef25c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Pill filter used on the timetable's class-category filters.",
+      "html": "<button class=\"ds-chip\" aria-pressed=\"false\"><span class=\"ds-chip-dot\" style=\"--c:#466a41\"></span><span>CrossFit</span></button>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; background: none; border: none; box-shadow: inset 0 0 0 1.5px rgba(15,32,22,0.28); font-family: \"Anuphan\", system-ui, sans-serif; font-weight: 600; font-size: 0.9rem; color: #0f2016; cursor: pointer; transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease, transform 160ms cubic-bezier(0.19,1,0.22,1); } .ds-chip-dot { width: 9px; height: 9px; border-radius: 2px; transform: rotate(45deg); background: var(--c); flex: none; } .ds-chip[aria-pressed=\"true\"] { background: #0f2016; color: #fbf7dc; box-shadow: inset 0 0 0 1.5px #0f2016; } .ds-chip:not([aria-pressed=\"true\"]):hover { box-shadow: inset 0 0 0 1.5px #0f2016; } .ds-chip:active { transform: scale(0.96); }"
+    },
+    {
+      "name": "Step Card",
+      "kind": "card",
+      "refersTo": "card-panel",
+      "description": "Naga Deep panel used for the four first-step cards and the Thong Lo branch card, numbered with an outlined display numeral.",
+      "html": "<div class=\"ds-card\"><span class=\"ds-card-n\">1</span><h3 class=\"ds-card-h\">Book a class</h3><p class=\"ds-card-p\">Pick a time on the booking calendar or message us on LINE.</p></div>",
+      "css": ".ds-card { position: relative; background: #3a5a36; color: #fbf7dc; padding: 28px 24px 30px; border-radius: 4px; min-height: 220px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; } .ds-card-n { position: absolute; top: 18px; right: 22px; font-family: \"Big Shoulders\", sans-serif; font-weight: 900; font-size: 4.4rem; line-height: 0.8; color: transparent; -webkit-text-stroke: 1.5px rgba(251,247,220,0.55); } .ds-card-h { padding-right: 2.2rem; font-family: \"Big Shoulders\", sans-serif; font-weight: 800; text-transform: uppercase; font-size: 1.8rem; line-height: 1; margin: 0; } .ds-card-p { color: #d9dcc0; font-family: \"Anuphan\", sans-serif; font-size: 0.98rem; line-height: 1.5; max-width: 34ch; margin: 0; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed top bar, transparent over the hero and going solid lacquer with blur on scroll; current-section link carries a neon underline.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\">CrossFit Naga</a><nav class=\"ds-nav-links\"><a href=\"#\" class=\"is-current\">Classes</a><a href=\"#\">Coaches</a><a href=\"#\">Timetable</a></nav><a class=\"ds-btn-primary\" href=\"#\" style=\"min-height:42px;font-size:0.94rem;\">Book a class</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; height: 72px; padding: 0 32px; background: rgba(12,26,18,0.82); backdrop-filter: blur(12px) saturate(1.2); -webkit-backdrop-filter: blur(12px) saturate(1.2); } .ds-nav-brand { font-family: \"Big Shoulders\", sans-serif; font-weight: 800; font-size: 1.45rem; text-transform: uppercase; color: #fbf7dc; text-decoration: none; } .ds-nav-links { display: flex; gap: 28px; margin-inline: auto; } .ds-nav-links a { text-decoration: none; font-family: \"Anuphan\", sans-serif; font-weight: 500; font-size: 0.98rem; color: #d9dcc0; position: relative; padding-block: 6px; } .ds-nav-links a::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #eef25c; transform: scaleX(0); transition: transform 350ms cubic-bezier(0.19,1,0.22,1); } .ds-nav-links a:hover, .ds-nav-links a.is-current { color: #fbf7dc; } .ds-nav-links a:hover::after, .ds-nav-links a.is-current::after { transform: scaleX(1); }"
+    },
+    {
+      "name": "Medallion Intro Reveal",
+      "kind": "custom",
+      "refersTo": "intro-medallion",
+      "description": "The CSS reveal shell around the intro's three.js canvas: a lacquer overlay masked open by a radial gradient whose center and radius the animation drives frame by frame, so the page appears to open exactly where the camera dives into the naga's coil. The 3D medallion itself (lacquer disc, gold lathed rim, cream relief) renders to the canvas and cannot be captured as static markup; this snippet is the DOM/CSS half of the effect only.",
+      "html": "<div class=\"ds-intro\"><canvas class=\"ds-intro-canvas\"></canvas></div>",
+      "css": ".ds-intro { position: fixed; inset: 0; background: #0c1a12; --open: 0px; --ox: 50%; --oy: 50%; -webkit-mask: radial-gradient(circle at var(--ox) var(--oy), transparent var(--open), #000 calc(var(--open) + 1px)); mask: radial-gradient(circle at var(--ox) var(--oy), transparent var(--open), #000 calc(var(--open) + 1px)); } .ds-intro-canvas { width: 100%; height: 100%; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Naga's Staircase",
+    "overview": "The naga guards the stairs of every Thai temple, and this site is built as that staircase: a climb in named steps, the naga beside you the whole way up. The page runs in a lacquer-dark green that reads as temple wood at night, breaks into paper-cream bands for the practical sections (timetable, prices), and marks every stair-tread transition between bands with the same seven-notch diagonal cut that appears on the coach cards' slash mark. Gold is temple gilt, cut for ornament only, never for reading. One color is allowed to break the rule of restraint: the gym's own neon yellow, held back for the single action that matters (book a class) and for anything telling you where you are right now.\n\nThis is a climb, not a scroll. The right-edge rail tracks vertical progress like a staircase rail, its diamond stops lighting gold as you pass them and neon at the one you're on. The opening sequence literalizes the metaphor once: a lacquer-and-gold medallion spins to face you, then the camera dives through the open coil of the naga into the gym itself. The world refuses the default black-box gym site with a red CTA and stock athletes; every photo and video on the page is the real gym, in temple-inflected sage and gilt instead of gym-red.",
+    "keyCharacteristics": [
+      "Deep lacquer green and mid-sage green own the dark bands; cream paper owns the practical ones.",
+      "Gold marks ornament and progress only: the medallion, the slash glyph, the climb rail.",
+      "One neon spark, reserved for the primary action and for \"you are here\" / \"this one's next\" states.",
+      "Condensed uppercase display type for every heading, name and number; a plain humanist sans for every sentence of reading.",
+      "A single stepped diagonal seam, reused at every band change, on the coach photo's corner flag, and behind the coaches and Sathorn panels as a tiled scale arc."
+    ],
+    "rules": [
+      { "name": "The One Spark Rule", "body": "Neon yellow appears only on the primary booking action and on state markers that mean \"now\" or \"next\": the timetable's next-class slot, the rail's current stop, the current nav underline, ::selection. Nowhere else on the page.", "section": "colors" },
+      { "name": "Gilt Is Ornament Only", "body": "Gold never fills a button, colors a paragraph, or marks a pressed or hover state outside the climb rail. Its jobs are the medallion, the slash glyph, and the rail's gold fill and passed-stop diamonds.", "section": "colors" },
+      { "name": "Condensed Uppercase for Names, Plain Sans for Reading", "body": "Anything that is a heading, a proper name, a number, or a short label is set in Big Shoulders, uppercase. Every sentence of reading copy is set in Anuphan, sentence case, never in the display face.", "section": "typography" },
+      { "name": "Thai Swaps the Cut, Not the Voice", "body": "`:lang(th)` moves .h2, .hero__title, .close__title and the name fields to Kanit at weight 800, tracking reset to normal and line-height opened to 1.15, because Big Shoulders has no Thai glyphs. The hierarchy and the uppercase rule stay the same.", "section": "typography" },
+      { "name": "Flat Except the Floating Marks", "body": "No card, tile, button, or band carries a shadow. Shadows exist only on the rail-rider mark, the closing emblem, and the mobile dock, each riding over the page rather than sitting in it.", "section": "elevation" },
+      { "name": "The Stair-Step Seam", "body": "Any time one band meets a different-colored band, the seam is the same seven-notch diagonal cut (var(--stair)), scaled by --edge. It is the site's only transition device between bands, and it is not used anywhere a band meets itself.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do reserve neon yellow for the primary booking action and for any \"you are here\" or \"this one's next\" marker (timetable's next-class slot, rail's current stop, nav's current link).",
+      "Do use the stepped stair clip-path (var(--stair)) for every band-to-band color change; it is the only transition device between bands.",
+      "Do set every heading, proper name, and numeral in the display face, uppercase; keep every sentence of reading copy in Anuphan, sentence case.",
+      "Do hold every rectangular surface to a 4px radius; round only icon buttons (circle) and filter chips (pill).",
+      "Do draw icons as 2px-stroke line glyphs from the page's own inline <symbol> sprite; never a third-party icon font or filled glyph."
+    ],
+    "donts": [
+      "Don't give gold a second job. It never colors body text, fills a button, or marks a hover or pressed state outside the climb rail.",
+      "Don't add a shadow to a card, tile, or button. The only shadows on the page are the rail-rider mark, the closing emblem, and the mobile dock.",
+      "Don't apply the hero's green color-grade (mix-blend-mode: color over the video) to any other photo or video; it is reserved for the hero background so the coaches, mosaic, and stage media stay true color.",
+      "Don't curve a corner past 4px, except the two named exceptions (round icon buttons, pill chips)."
+    ]
+  }
+}

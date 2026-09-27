@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CrossFit Naga | CrossFit and Hyrox in Thong Lo, Bangkok</title>
+<meta name="description" content="CrossFit and Hyrox gym on Soi Torsak 1, Thong Lo, Bangkok. Coached classes seven days a week for beginners and athletes. Naga Sathorn opening soon.">
+<meta name="theme-color" content="#0c1a12">
+<meta property="og:title" content="CrossFit Naga, Bangkok">
+<meta property="og:description" content="CrossFit and Hyrox classes in Thong Lo. Book online and pay at the gym.">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/favicon-64.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/bigshoulders.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/anuphan-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script>
+  document.documentElement.classList.add('js');
+  try { if (sessionStorage.getItem('naga-intro') === '1') document.documentElement.classList.add('intro-seen'); } catch (e) {}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ExerciseGym","name":"CrossFit Naga","telephone":"+66809827029","email":"crossfitnaga.bkk@gmail.com","address":{"@type":"PostalAddress","streetAddress":"19 Soi Torsak 1, Khlong Tan Nuea","addressLocality":"Watthana, Bangkok","postalCode":"10110","addressCountry":"TH"},"sameAs":["https://www.instagram.com/crossfit_naga","https://www.facebook.com/p/Crossfit-Naga-61565654665492/"]}
+</script>
+</head>
+<body>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <canvas class="intro__canvas" id="intro-canvas"></canvas>
+  <img class="intro__static" src="img/emblem.svg" alt="" width="360" height="360">
+  <button class="intro__skip" type="button" tabindex="-1">Skip</button>
+</div>
+
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="nav" id="top">
+  <a class="nav__brand" href="#top" aria-label="CrossFit Naga home">
+    <img src="img/naga-mark.svg" alt="" width="40" height="40">
+    <span>CrossFit Naga</span>
+  </a>
+  <nav class="nav__links" aria-label="Main">
+    <a href="#classes" data-i18n="nav.classes">Classes</a>
+    <a href="#coaches" data-i18n="nav.coaches">Coaches</a>
+    <a href="#timetable" data-i18n="nav.timetable">Timetable</a>
+    <a href="#prices" data-i18n="nav.prices">Prices</a>
+    <a href="#visit" data-i18n="nav.visit">Visit</a>
+  </nav>
+  <div class="nav__actions">
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="menu-sheet"><span class="menu-btn__bars" aria-hidden="true"></span><span data-i18n="nav.menu">Menu</span></button>
+    <button class="lang" type="button" id="lang-toggle" aria-label="เปลี่ยนเป็นภาษาไทย"><span data-lang-label>ไทย</span></button>
+    <a class="btn btn--neon btn--sm" href="https://naga.pushpress.com/landing/calendar" target="_blank" rel="noopener" data-i18n="cta.book">Book a class</a>
+  </div>
+</header>
+
+<div class="sheet" id="menu-sheet" hidden>
+  <nav aria-label="Mobile">
+    <a href="#classes" data-i18n="nav.classes">Classes</a>
+    <a href="#coaches" data-i18n="nav.coaches">Coaches</a>
+    <a href="#timetable" data-i18n="nav.timetable">Timetable</a>
+    <a href="#prices" data-i18n="nav.prices">Prices</a>
+    <a href="#visit" data-i18n="nav.visit">Visit</a>
+  </nav>
+  <div class="sheet__cta">
+    <a class="btn btn--neon btn--lg" href="https://naga.pushpress.com/landing/calendar" target="_blank" rel="noopener"><span data-i18n="cta.book">Book a class</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <a class="btn btn--ghost btn--lg" href="https://lin.ee/SWHmCt1" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="cta.line">Chat on LINE</span></a>
+  </div>
+</div>
+
+<aside class="rail" aria-label="Page sections">
+  <span class="rail__track" aria-hidden="true"></span>
+  <span class="rail__fill" aria-hidden="true"></span>
+  <span class="rail__rider" aria-hidden="true"></span>
+  <ol class="rail__stops">
+    <li><a href="#top" data-stop="top"><span data-i18n="rail.start">Start</span></a></li>
+    <li><a href="#steps" data-stop="steps"><span data-i18n="rail.steps">First steps</span></a></li>
+    <li><a href="#classes" data-stop="classes"><span data-i18n="nav.classes">Classes</span></a></li>
+    <li><a href="#coaches" data-stop="coaches"><span data-i18n="nav.coaches">Coaches</span></a></li>
+    <li><a href="#crew" data-stop="crew"><span data-i18n="rail.crew">The crew</span></a></li>
+    <li><a href="#timetable" data-stop="timetable"><span data-i18n="nav.timetable">Timetable</span></a></li>
+    <li><a href="#prices" data-stop="prices"><span data-i18n="nav.prices">Prices</span></a></li>
+    <li><a href="#visit" data-stop="visit"><span data-i18n="nav.visit">Visit</span></a></li>
+  </ol>
+</aside>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 3.5c-5 0-9 3.2-9 7.2 0 3.6 3.2 6.6 7.6 7.1l-.4 2.7c-.1.5.4.8.8.5l3.8-3.4c3.6-.7 6.2-3.6 6.2-6.9 0-4-4-7.2-9-7.2Z" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11.5A7 7 0 0 1 19 9.5C19 14.7 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.8l1.4 4-2 1.3a11 11 0 0 0 6.4 6.4l1.3-2 4 1.4v2.8a2 2 0 0 1-2.2 2A16 16 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="slashes" viewBox="0 0 66 24"><path d="M10 0h12L12 24H0zM32 0h12L34 24H22zM54 0h12L56 24H44z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <video class="hero__video" id="hero-video" autoplay muted loop playsinline preload="auto"
+             poster="media/hero-wide.jpg" data-wide="media/hero-wide.mp4" data-tall="media/hero-tall.mp4"
+             data-poster-tall="media/hero-tall.jpg"></video>
+    </div>
+    <div class="hero__inner wrap">
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span data-i18n="hero.l1">CrossFit &amp; Hyrox</span></span>
+        <span class="line"><span data-i18n="hero.l2">in Thong Lo</span></span>
+      </h1>
+      <p class="hero__lede" data-i18n="hero.lede">Coached group classes for first-timers and competitors, seven days a week on Soi Torsak 1. Book online and pay at the gym.</p>
+      <div class="hero__cta">
+        <a class="btn btn--neon" href="https://naga.pushpress.com/landing/calendar" target="_blank" rel="noopener"><span data-i18n="cta.book">Book a class</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost" href="https://lin.ee/SWHmCt1" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="cta.line">Chat on LINE</span></a>
+      </div>
+      <a class="hero__branch" href="#visit"><span class="tag" data-i18n="tag.soon">Opening soon</span> <span data-i18n="hero.branch">Naga Sathorn, our second gym</span></a>
+    </div>
+    <div class="hero__edge" aria-hidden="true"></div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="steps band band--naga" id="steps" aria-labelledby="steps-title">
+    <div class="wrap">
+      <header class="head">
+        <h2 id="steps-title" class="h2" data-i18n="steps.title">Your first four steps</h2>
+        <svg class="slashes" aria-hidden="true"><use href="#slashes"/></svg>
+      </header>
+      <ol class="stair">
+        <li class="stair__step" style="--i:0">
+          <span class="stair__n" aria-hidden="true">1</span>
+          <h3 data-i18n="steps.1.t">Book a class</h3>
+          <p data-i18n="steps.1.p">Pick a time on the booking calendar or message us on LINE. Drop-ins pay at the gym.</p>
+        </li>
+        <li class="stair__step" style="--i:1">
+          <span class="stair__n" aria-hidden="true">2</span>
+          <h3 data-i18n="steps.2.t">Start with CrossFit Basics</h3>
+          <p data-i18n="steps.2.p">Basics runs Wednesday at 17:00 and Friday at 8:45, and covers the core movements before you join regular classes.</p>
+        </li>
+        <li class="stair__step" style="--i:2">
+          <span class="stair__n" aria-hidden="true">3</span>
+          <h3 data-i18n="steps.3.t">Join the daily classes</h3>
+          <p data-i18n="steps.3.p">CrossFit runs up to five times a day on weekdays, between 6:30 and 19:15.</p>
+        </li>
+        <li class="stair__step" style="--i:3">
+          <span class="stair__n" aria-hidden="true">4</span>
+          <h3 data-i18n="steps.4.t">Pick your direction</h3>
+          <p data-i18n="steps.4.p">Train for a Hyrox race, learn Olympic and Chinese weightlifting, get your first handstand, or compete with the team.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section class="classes band band--lacquer" id="classes" aria-labelledby="classes-title">
+    <div class="wrap classes__grid">
+      <div class="classes__list">
+        <header class="head">
+          <h2 id="classes-title" class="h2" data-i18n="classes.title">What we train</h2>
+          <svg class="slashes" aria-hidden="true"><use href="#slashes"/></svg>
+        </header>
+        <ul class="program" role="list">
+          <li class="program__item is-active" data-media="m-crossfit">
+            <button class="program__btn" type="button" aria-expanded="true">
+              <span class="program__name">CrossFit</span>
+              <svg class="i program__chev" aria-hidden="true"><use href="#i-chev"/></svg>
+            </button>
+            <div class="program__body"><div class="program__inner">
+              <p data-i18n="classes.cf.p">Strength, gymnastics and conditioning in a coached group, scaled for beginners and pushed for athletes.</p>
+              <p class="program__when" data-i18n="classes.cf.w">Every weekday, plus Sunday at 11:00</p>
+              <div class="program__inline" data-inline="m-crossfit"></div></div>
+            </div>
+          </li>
+          <li class="program__item" data-media="m-hyrox">
+            <button class="program__btn" type="button" aria-expanded="false">
+              <span class="program__name">Hyrox</span>
+              <svg class="i program__chev" aria-hidden="true"><use href="#i-chev"/></svg>
+            </button>
+            <div class="program__body"><div class="program__inner">
+              <p data-i18n="classes.hx.p">CrossFit Naga is an official HYROX gym, and the classes train running and station work for race day.</p>
+              <p class="program__when" data-i18n="classes.hx.w">Mon, Tue, Wed and Fri, plus Hyrox Team on Saturday and Sunday</p>
+              <div class="program__inline" data-inline="m-hyrox"></div></div>
+            </div>
+          </li>
+          <li class="program__item" data-media="m-lifting">
+            <button class="program__btn" type="button" aria-expanded="false">
+              <span class="program__name" data-i18n="classes.wl.n">Weightlifting</span>
+              <svg class="i program__chev" aria-hidden="true"><use href="#i-chev"/></svg>
+            </button>
+            <div class="program__body"><div class="program__inner">
+              <p data-i18n="classes.wl.p">Classes teach the snatch and the clean and jerk from the ground up, and Coach Hansen runs Chinese weightlifting on Saturday afternoons.</p>
+              <p class="program__when" data-i18n="classes.wl.w">Olympic lifting Tue 11:00, Sat and Sun 9:45. Chinese lifting Sat 15:30</p>
+              <div class="program__inline" data-inline="m-lifting"></div></div>
+            </div>
+          </li>
+          <li class="program__item" data-media="m-gym">
+            <button class="program__btn" type="button" aria-expanded="false">
+              <span class="program__name" data-i18n="classes.gy.n">Gymnastics &amp; calisthenics</span>
+              <svg class="i program__chev" aria-hidden="true"><use href="#i-chev"/></svg>
+            </button>
+            <div class="program__body"><div class="program__inner">
+              <p data-i18n="classes.gy.p">Coach Hakim teaches handstands, pull-ups and bodyweight strength.</p>
+              <p class="program__when" data-i18n="classes.gy.w">Calisthenics Thu 19:30, Skills 101 Fri 11:00, Gymnastics Sat 11:00</p>
+              <div class="program__inline" data-inline="m-gym"></div></div>
+            </div>
+          </li>
+          <li class="program__item" data-media="m-kids">
+            <button class="program__btn" type="button" aria-expanded="false">
+              <span class="program__name" data-i18n="classes.kd.n">Kids &amp; teens</span>
+              <svg class="i program__chev" aria-hidden="true"><use href="#i-chev"/></svg>
+            </button>
+            <div class="program__body"><div class="program__inner">
+              <p data-i18n="classes.kd.p">CrossFit Kids with Coach Annika, booked separately from adult classes, and CrossFit Teens on Thursday afternoons.</p>
+              <p class="program__when" data-i18n="classes.kd.w">Teens Thu 16:00</p>
+              <a class="link" href="https://naga.pushpress.com/landing/plans/plan_729021cc9f4c4b" target="_blank" rel="noopener"><span data-i18n="classes.kd.link">Book CrossFit Kids</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <div class="program__inline" data-inline="m-kids"></div></div>
+            </div>
+          </li>
+        </ul>
+        <p class="classes__also" data-i18n="classes.also">Also on the timetable: Peach Camp, Team WOD on Saturday, Mobility on Sunday and Open Gym most afternoons.</p>
+      </div>
+
+      <div class="classes__stage" aria-hidden="true">
+        <div class="stage">
+          <figure class="stage__layer is-active" id="m-crossfit">
+            <video muted loop playsinline preload="none" poster="media/reel-classes.jpg" data-src="media/reel-classes.mp4"></video>
+          </figure>
+          <figure class="stage__layer" id="m-hyrox"><img src="img/hyrox.webp" alt="" loading="lazy" width="1000" height="1250"></figure>
+          <figure class="stage__layer" id="m-lifting"><img src="img/coach-hansen.webp" alt="" loading="lazy" width="720" height="960"></figure>
+          <figure class="stage__layer" id="m-gym">
+            <video muted loop playsinline preload="none" poster="media/reel-handstand.jpg" data-src="media/reel-handstand.mp4"></video>
+          </figure>
+          <figure class="stage__layer" id="m-kids"><img src="img/coach-annika.webp" alt="" loading="lazy" width="720" height="960"></figure>
+          <svg class="stage__slashes" aria-hidden="true"><use href="#slashes"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACHES -->
+  <section class="coaches band band--forest" id="coaches" aria-labelledby="coaches-title">
+    <div class="wrap">
+      <header class="head head--row">
+        <div>
+          <h2 id="coaches-title" class="h2" data-i18n="coaches.title">The coaches</h2>
+          <svg class="slashes" aria-hidden="true"><use href="#slashes"/></svg>
+        </div>
+        <div class="carousel__controls">
+          <button class="round" type="button" data-dir="-1" aria-label="Previous coach"><svg class="i" style="transform:scaleX(-1)" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <span class="carousel__count" aria-live="polite"><b data-count>1</b> / 6</span>
+          <button class="round" type="button" data-dir="1" aria-label="Next coach"><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></button>
+        </div>
+      </header>
+    </div>
+    <div class="carousel" role="region" aria-roledescription="carousel" aria-labelledby="coaches-title">
+      <div class="carousel__track" tabindex="0">
+        <article class="coach" aria-roledescription="slide" aria-label="1 of 6">
+          <figure class="coach__photo">
+            <img src="img/coach-fx.webp" alt="Coach FX, arms crossed, in front of the CrossFit Naga neon sign" width="720" height="960" loading="lazy" draggable="false">
+            <figcaption class="coach__bar"><span>Coach FX</span><svg aria-hidden="true"><use href="#slashes"/></svg></figcaption>
+          </figure>
+          <div class="coach__body">
+            <p class="coach__role" data-i18n="c.fx.role">Owner · CrossFit Level 2</p>
+            <ul class="tags"><li data-i18n="t.crossfit">CrossFit</li><li data-i18n="t.muscle">Muscle gain</li><li data-i18n="t.fat">Fat loss</li></ul>
+            <p class="coach__bio" data-i18n="c.fx.bio">FX trained in Australia (Certificate III and IV in Sport and Fitness), the UK (Level 3 Personal Training) and France (BPJEPS Sport and Weightlifting), and holds Les Mills Grit. His favourite part is watching members push through a hard session.</p>
+          </div>
+        </article>
+        <article class="coach" aria-roledescription="slide" aria-label="2 of 6">
+          <figure class="coach__photo">
+            <img src="img/coach-annika.webp" alt="Coach Annika smiling in the gym" width="720" height="960" loading="lazy" draggable="false">
+            <figcaption class="coach__bar"><span>Coach Annika</span><svg aria-hidden="true"><use href="#slashes"/></svg></figcaption>
+          </figure>
+          <div class="coach__body">
+            <p class="coach__role" data-i18n="c.an.role">CrossFit Kids · Hybrid training</p>
+            <ul class="tags"><li data-i18n="t.hybrid">Functional &amp; hybrid</li><li data-i18n="t.kids">CrossFit Kids</li><li data-i18n="t.weight">Weight management</li></ul>
+            <p class="coach__bio" data-i18n="c.an.bio">Annika coaches members of every age, from CrossFit Kids to adults working on weight management. Expect a lot of energy in her classes.</p>
+          </div>
+        </article>
+        <article class="coach" aria-roledescription="slide" aria-label="3 of 6">
+          <figure class="coach__photo">
+            <img src="img/coach-hakim.webp" alt="Coach Hakim in a tank top, arms crossed" width="720" height="960" loading="lazy" draggable="false">
+            <figcaption class="coach__bar"><span>Coach Hakim</span><svg aria-hidden="true"><use href="#slashes"/></svg></figcaption>
+          </figure>
+          <div class="coach__body">
+            <p class="coach__role" data-i18n="c.hk.role">Calisthenics · Handstands</p>
+            <ul class="tags"><li data-i18n="t.cali">Calisthenics</li><li data-i18n="t.hand">Handstand</li><li data-i18n="t.muscle">Muscle gain</li></ul>
+            <p class="coach__bio" data-i18n="c.hk.bio">Hakim teaches calisthenics, handstands and muscle building, starting from technique so you train without getting hurt.</p>
+          </div>
+        </article>
+        <article class="coach" aria-roledescription="slide" aria-label="4 of 6">
+          <figure class="coach__photo">
+            <img src="img/coach-hansen.webp" alt="Coach Hansen in a white T-shirt under the CrossFit Naga neon sign" width="720" height="960" loading="lazy" draggable="false">
+            <figcaption class="coach__bar"><span>Coach Hansen</span><svg aria-hidden="true"><use href="#slashes"/></svg></figcaption>
+          </figure>
+          <div class="coach__body">
+            <p class="coach__role" data-i18n="c.hs.role">Chinese weightlifting</p>
+            <ul class="tags"><li data-i18n="t.wl">Weightlifting</li><li data-i18n="t.tech">Technique</li></ul>
+            <p class="coach__bio" data-i18n="c.hs.bio">Hansen has more than 10 years in Chinese weightlifting under Coach Jianping Ma, a former Chinese national athlete, and co-founded Ma Weightlifting in 2022. He is a biomechanics engineer and teaches beginners a clean foundation. His class runs Saturday at 15:30.</p>
+          </div>
+        </article>
+        <article class="coach" aria-roledescription="slide" aria-label="5 of 6">
+          <figure class="coach__photo">
+            <img src="img/coach-palm.webp" alt="Coach Palm smiling, arms crossed" width="720" height="960" loading="lazy" draggable="false">
+            <figcaption class="coach__bar"><span>Coach Palm</span><svg aria-hidden="true"><use href="#slashes"/></svg></figcaption>
+          </figure>
+          <div class="coach__body">
+            <p class="coach__role" data-i18n="c.pm.role">Sport and Health Science · CrossFit Level 1</p>
+            <ul class="tags"><li data-i18n="t.func">Functional training</li><li data-i18n="t.beg">CrossFit for beginners</li><li data-i18n="t.wl">Weightlifting</li><li data-i18n="t.fat">Fat loss</li></ul>
+            <p class="coach__bio" data-i18n="c.pm.bio">Palm started training to get stronger after getting sick often. He coaches gymnastics, weightlifting and weight loss, and spends most of his time on getting your technique right.</p>
+          </div>
+        </article>
+        <article class="coach" aria-roledescription="slide" aria-label="6 of 6">
+          <figure class="coach__photo">
+            <img src="img/coach-sompriaw.webp" alt="Coach Sompriaw in the gym" width="720" height="960" loading="lazy" draggable="false">
+            <figcaption class="coach__bar"><span>Coach Sompriaw</span><svg aria-hidden="true"><use href="#slashes"/></svg></figcaption>
+          </figure>
+          <div class="coach__body">
+            <p class="coach__role" data-i18n="c.sp.role">Sports Science, Chulalongkorn · Pilates</p>
+            <ul class="tags"><li data-i18n="t.func">Functional training</li><li data-i18n="t.pilates">Pilates</li><li data-i18n="t.crossfit">CrossFit</li></ul>
+            <p class="coach__bio" data-i18n="c.sp.bio">Sompriaw has coached functional fitness for over 6 years and CrossFit for 2, and teaches Pilates. She plans training around moving better first and getting stronger on top of it.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREW -->
+  <section class="crew band band--lacquer" id="crew" aria-labelledby="crew-title">
+    <div class="wrap">
+      <header class="head">
+        <h2 id="crew-title" class="h2" data-i18n="crew.title">The people you train with</h2>
+        <svg class="slashes" aria-hidden="true"><use href="#slashes"/></svg>
+      </header>
+      <p class="lede" data-i18n="crew.lede">Members turned up in costume for two Halloween classes, lined up in fairy lights at Christmas and filled the floor for our first anniversary. A Naga team competed at Thailand Throwdown in Chiang Mai in January 2025.</p>
+      <div class="mosaic">
+        <figure class="tile tile--wide reveal-img">
+          <video muted loop playsinline preload="none" poster="media/anniversary.jpg" data-src="media/anniversary.mp4" data-autoplay></video>
+          <figcaption data-i18n="crew.anniv">First anniversary</figcaption>
+        </figure>
+        <figure class="tile tile--tall reveal-img">
+          <video muted loop playsinline preload="none" poster="media/reel-halloween.jpg" data-src="media/reel-halloween.mp4" data-autoplay></video>
+          <figcaption data-i18n="crew.hw1">Halloween class 1</figcaption>
+        </figure>
+        <figure class="tile reveal-img">
+          <img src="img/christmas.webp" alt="Members posing in Santa hats and fairy lights under the CrossFit Naga sign" loading="lazy" width="1200" height="1200">
+          <figcaption data-i18n="crew.xmas">Christmas</figcaption>
+        </figure>
+        <figure class="tile reveal-img">
+          <img src="img/throwdown.webp" alt="The Naga team with hand-painted signs at Thailand Throwdown" loading="lazy" width="1200" height="1200">
+          <figcaption data-i18n="crew.td">Thailand Throwdown, Chiang Mai</figcaption>
+        </figure>
+        <figure class="tile tile--tall reveal-img">
+          <video muted loop playsinline preload="none" poster="media/reel-halloween2.jpg" data-src="media/reel-halloween2.mp4" data-autoplay></video>
+          <figcaption data-i18n="crew.hw2">Halloween class 2</figcaption>
+        </figure>
+      </div>
+      <a class="link link--big" href="https://www.instagram.com/crossfit_naga" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-camera"/></svg><span data-i18n="crew.ig">More on Instagram @crossfit_naga</span></a>
+    </div>
+  </section>
+
+  <!-- TIMETABLE -->
+  <section class="timetable band band--paper" id="timetable" aria-labelledby="tt-title">
+    <div class="wrap">
+      <header class="head head--row">
+        <div>
+          <h2 id="tt-title" class="h2" data-i18n="tt.title">Timetable</h2>
+          <svg class="slashes" aria-hidden="true"><use href="#slashes"/></svg>
+        </div>
+        <p class="tt__next" id="tt-next" hidden></p>
+      </header>
+      <div class="tt__filters" role="group" aria-label="Filter classes" id="tt-filters"></div>
+      <div class="tt__days" role="tablist" aria-label="Day" id="tt-tabs"></div>
+      <div class="tt__grid" id="tt-grid"></div>
+      <p class="tt__note"><span data-i18n="tt.note">Times come from the gym's posted schedule. The booking calendar has the live version.</span>
+        <a class="link" href="https://naga.pushpress.com/landing/calendar" target="_blank" rel="noopener"><span data-i18n="tt.open">Open the booking calendar</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="prices band band--paper" id="prices" aria-labelledby="prices-title">
+    <div class="wrap">
+      <header class="head">
+        <h2 id="prices-title" class="h2" data-i18n="prices.title">Membership</h2>
+        <svg class="slashes" aria-hidden="true"><use href="#slashes"/></svg>
+      </header>
+      <p class="lede lede--ink" data-i18n="prices.lede">Every plan is All Access with unlimited classes. Drop-ins book online and pay at the gym.</p>
+      <ol class="plans">
+        <li class="plan" style="--i:0">
+          <h3 class="plan__len"><span class="num">1</span> <span data-i18n="prices.month">month</span></h3>
+          <p class="plan__price"><span class="num">5,500</span> THB</p>
+          <p class="plan__per" data-i18n="prices.p1">Pay month to month</p>
+        </li>
+        <li class="plan" style="--i:1">
+          <h3 class="plan__len"><span class="num">3</span> <span data-i18n="prices.months">months</span></h3>
+          <p class="plan__price"><span class="num">15,300</span> THB</p>
+          <p class="plan__per" data-i18n="prices.p3">5,100 THB a month, 1,200 THB less than monthly</p>
+        </li>
+        <li class="plan" style="--i:2">
+          <h3 class="plan__len"><span class="num">6</span> <span data-i18n="prices.months">months</span></h3>
+          <p class="plan__price"><span class="num">29,400</span> THB</p>
+          <p class="plan__per" data-i18n="prices.p6">4,900 THB a month, 3,600 THB less than monthly</p>
+        </li>
+        <li class="plan plan--top" style="--i:3">
+          <h3 class="plan__len"><span class="num">12</span> <span data-i18n="prices.months">months</span></h3>
+          <p class="plan__price"><span class="num">54,000</span> THB</p>
+          <p class="plan__per" data-i18n="prices.p12">4,500 THB a month, 12,000 THB less than monthly</p>
+        </li>
+      </ol>
+      <div class="prices__cta">
+        <a class="btn btn--ink" href="https://naga.pushpress.com/landing/plans" target="_blank" rel="noopener"><span data-i18n="prices.cta">Choose a plan</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--line-ink" href="https://lin.ee/SWHmCt1" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="prices.ask">Ask about plans on LINE</span></a>
+      </div>
+      <p class="tt__note" data-i18n="prices.note">Prices from the gym's booking page, September 2026.</p>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit band band--naga" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <header class="head">
+        <h2 id="visit-title" class="h2" data-i18n="visit.title">Two gyms in Bangkok</h2>
+        <svg class="slashes" aria-hidden="true"><use href="#slashes"/></svg>
+      </header>
+      <div class="branches">
+        <article class="branch">
+          <h3 class="branch__name" data-i18n="visit.tl">Thong Lo</h3>
+          <p class="branch__addr">19 Soi Torsak 1, Khlong Tan Nuea,<br>Watthana, Bangkok 10110</p>
+          <ul class="branch__meta" role="list">
+            <li><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+66809827029">080 982 7029</a></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:crossfitnaga.bkk@gmail.com">crossfitnaga.bkk@gmail.com</a></li>
+          </ul>
+          <div class="branch__map">
+            <iframe title="Map of CrossFit Naga Thong Lo" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=CrossFit+Naga,+19+Soi+Torsak+1,+Khlong+Tan+Nuea,+Watthana,+Bangkok+10110&amp;output=embed"></iframe>
+          </div>
+          <a class="btn btn--cream" href="https://www.google.com/maps/search/?api=1&amp;query=CrossFit+Naga+19+Soi+Torsak+1+Bangkok" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="visit.dir">Get directions</span></a>
+        </article>
+        <article class="branch branch--soon">
+          <h3 class="branch__name"><span data-i18n="visit.st">Sathorn</span> <span class="tag" data-i18n="tag.soon">Opening soon</span></h3>
+          <p class="branch__addr" data-i18n="visit.sathorn">Naga Sathorn is our second gym. Follow @crossfit_naga on Instagram for the address and opening date.</p>
+          <a class="btn btn--cream" href="https://www.instagram.com/crossfit_naga" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-camera"/></svg><span data-i18n="visit.follow">Follow on Instagram</span></a>
+          <div class="hiring">
+            <h4 data-i18n="visit.hire.t">We are hiring a full-time coach</h4>
+            <p data-i18n="visit.hire.p">The job covers CrossFit Naga and Naga Sathorn. Send your CV and a short introduction to crossfitnaga.bkk@gmail.com or by Instagram DM.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSE -->
+  <section class="close" aria-labelledby="close-title">
+    <div class="wrap close__inner">
+      <img class="close__mark" src="img/emblem.svg" alt="" width="360" height="360" loading="lazy">
+      <h2 id="close-title" class="close__title" data-i18n="close.title">Book your first class</h2>
+      <p data-i18n="close.p">Pick a time online and pay at the gym, or message us on LINE with any questions first.</p>
+      <div class="close__cta">
+        <a class="btn btn--neon btn--lg" href="https://naga.pushpress.com/landing/calendar" target="_blank" rel="noopener"><span data-i18n="cta.book">Book a class</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost btn--lg" href="https://lin.ee/SWHmCt1" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="cta.line">Chat on LINE</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <img src="img/naga-mark.svg" alt="" width="48" height="48">
+      <p><b>CrossFit Naga</b><br><span data-i18n="footer.sub">CrossFit and HYROX affiliated gym, Bangkok</span></p>
+    </div>
+    <ul class="footer__links" role="list">
+      <li><a href="https://www.instagram.com/crossfit_naga" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.facebook.com/p/Crossfit-Naga-61565654665492/" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="https://lin.ee/SWHmCt1" target="_blank" rel="noopener">LINE</a></li>
+      <li><a href="https://www.crossfit.com/gym/34784/crossfit-naga" target="_blank" rel="noopener">CrossFit.com</a></li>
+    </ul>
+    <p class="footer__legal"><span>© 2026 CrossFit Naga.</span> <span data-i18n="footer.tm">CrossFit is a registered trademark of CrossFit, LLC.</span></p>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <a class="btn btn--neon" href="https://naga.pushpress.com/landing/calendar" target="_blank" rel="noopener"><span data-i18n="cta.book">Book a class</span></a>
+  <a class="btn btn--dockline" href="https://lin.ee/SWHmCt1" target="_blank" rel="noopener" aria-label="Chat on LINE"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><span>LINE</span></a>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/site.js"></script>
+<script type="module" src="js/boot-intro.js"></script>
+</body>
+</html>
