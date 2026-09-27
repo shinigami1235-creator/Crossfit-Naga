@@ -21,16 +21,18 @@
     en: {
       days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       short: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      today: 'Today', all: 'All', to: 'to', nextToday: (n, t) => `Next class today: ${n} at ${t}`,
-      nextTomorrow: (n, t) => `First class tomorrow: ${n} at ${t}`,
+      today: 'Today', all: 'All', to: 'to',
+      rel: m => m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${m % 60} min`,
+      next: (n, t, off, day, rel) => off === 0 ? `Next class: ${n} today at ${t}, in ${rel}` : off === 1 ? `Next class: ${n} tomorrow at ${t}` : `Next class: ${n} on ${day} at ${t}`,
       cats: { crossfit: 'CrossFit', hyrox: 'Hyrox', lifting: 'Lifting', gym: 'Gymnastics', kids: 'Kids & teens', other: 'Open Gym & more' },
       toggle: 'ไทย', toggleLabel: 'เปลี่ยนเป็นภาษาไทย',
     },
     th: {
       days: ['จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์', 'อาทิตย์'],
       short: ['จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.', 'อา.'],
-      today: 'วันนี้', all: 'ทั้งหมด', to: 'ถึง', nextToday: (n, t) => `คลาสถัดไปวันนี้: ${n} เวลา ${t}`,
-      nextTomorrow: (n, t) => `คลาสแรกพรุ่งนี้: ${n} เวลา ${t}`,
+      today: 'วันนี้', all: 'ทั้งหมด', to: 'ถึง',
+      rel: m => m < 60 ? `${m} นาที` : `${Math.floor(m / 60)} ชม. ${m % 60} นาที`,
+      next: (n, t, off, day, rel) => off === 0 ? `คลาสถัดไป: ${n} วันนี้ ${t} น. (อีก ${rel})` : off === 1 ? `คลาสถัดไป: ${n} พรุ่งนี้ ${t} น.` : `คลาสถัดไป: ${n} วัน${day} ${t} น.`,
       cats: { crossfit: 'CrossFit', hyrox: 'Hyrox', lifting: 'ยกน้ำหนัก', gym: 'ยิมนาสติก', kids: 'เด็กและวัยรุ่น', other: 'Open Gym และอื่นๆ' },
       toggle: 'EN', toggleLabel: 'Switch to English',
     },
@@ -205,90 +207,89 @@
   });
   if (mobileClasses.matches && items[0]) mountInline(items[0]);
 
-  /* ---------- Coach carousel ---------- */
-  const track = $('.carousel__track');
-  if (track) {
-    const cards = $$('.coach', track);
+  /* ---------- Coach spotlight carousel ---------- */
+  const cf = $('.cf');
+  if (cf) {
+    const stage = $('.cf__stage', cf);
+    const cards = $$('.cf__card', cf);
+    const panels = $$('.cf__panel', cf);
+    const dots = $$('.cf__dot', cf);
     const countEl = $('[data-count]');
-    const prev = $('[data-dir="-1"]'), next = $('[data-dir="1"]');
-    let raf = 0;
+    const pauseBtn = $('#cf-pause');
+    const n = cards.length;
+    const INTERVAL = 7000;
+    let active = 0, timer = 0, userPaused = reduced, hover = false, focusIn = false, visible = false;
+    cf.style.setProperty('--cf-time', INTERVAL + 'ms');
 
-    const cardStep = () => cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth;
-    function update() {
-      raf = 0;
-      const rect = track.getBoundingClientRect();
-      const padLeft = parseFloat(getComputedStyle(track).paddingLeft) || 0;
-      const anchor = rect.left + padLeft;
-      let best = 0, bestD = Infinity;
-      cards.forEach((c, i) => {
-        const r = c.getBoundingClientRect();
-        const d = (r.left - anchor) / r.width;
-        if (Math.abs(d) < bestD) { bestD = Math.abs(d); best = i; }
-        if (!reduced) {
-          const off = Math.max(-2, Math.min(3, d));
-          const rot = off < 0 ? off * 16 : Math.max(0, off - 1.4) * -7;
-          const z = off < 0 ? off * 90 : Math.max(0, off - 1.4) * -40;
-          c.style.transform = `translateZ(${z.toFixed(1)}px) rotateY(${rot.toFixed(2)}deg)`;
-          c.style.opacity = off < -0.6 ? Math.max(0.25, 1 + (off + 0.6)).toFixed(2) : '1';
-        }
+    function show(i) {
+      active = (i + n) % n;
+      cards.forEach((c, k) => {
+        let d = k - active;
+        if (d > n / 2) d -= n;
+        if (d < -n / 2) d += n;
+        c.style.setProperty('--d', d);
+        c.style.setProperty('--ad', Math.abs(d));
+        c.classList.toggle('is-active', d === 0);
+        c.classList.toggle('is-far', Math.abs(d) > 2);
+        c.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
       });
-      if (countEl) countEl.textContent = best + 1;
-      const max = track.scrollWidth - track.clientWidth - 2;
-      if (prev) prev.disabled = track.scrollLeft <= 2;
-      if (next) next.disabled = track.scrollLeft >= max;
+      panels.forEach((p, k) => p.setAttribute('aria-hidden', k === active ? 'false' : 'true'));
+      dots.forEach((d, k) => {
+        d.classList.remove('is-active');
+        d.classList.toggle('is-done', k < active);
+        d.setAttribute('aria-current', k === active ? 'true' : 'false');
+      });
+      void dots[active].offsetWidth; // restart the fill animation
+      dots[active].classList.add('is-active');
+      if (countEl) countEl.textContent = active + 1;
+      schedule();
     }
-    const schedule = () => { if (!raf) raf = requestAnimationFrame(update); };
-    track.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('resize', schedule);
-    update();
+    function running() { return !userPaused && !hover && !focusIn && visible && !document.hidden; }
+    function schedule() {
+      clearTimeout(timer);
+      cf.classList.toggle('is-paused', !running());
+      cf.classList.toggle('is-still', userPaused);
+      if (running()) timer = setTimeout(() => show(active + 1), INTERVAL);
+    }
+    // Pausing mid-way would restart the timer from zero, so resume re-runs the full interval.
+    function refresh() { schedule(); }
 
-    [prev, next].forEach(b => b?.addEventListener('click', () => {
-      track.scrollBy({ left: cardStep() * +b.dataset.dir, behavior: reduced ? 'auto' : 'smooth' });
-    }));
-    track.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left: cardStep(), behavior: 'smooth' }); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({ left: -cardStep(), behavior: 'smooth' }); }
+    $$('.carousel__controls [data-dir]').forEach(b => b.addEventListener('click', () => show(active + +b.dataset.dir)));
+    cards.forEach((c, k) => c.addEventListener('click', () => { if (!moved) show(k); }));
+    dots.forEach((d, k) => d.addEventListener('click', () => show(k)));
+    pauseBtn?.addEventListener('click', () => {
+      userPaused = !userPaused;
+      pauseBtn.setAttribute('aria-pressed', String(userPaused));
+      pauseBtn.setAttribute('aria-label', userPaused ? 'Play the coach carousel' : 'Pause the coach carousel');
+      $('use', pauseBtn).setAttribute('href', userPaused ? '#i-play' : '#i-pause');
+      refresh();
     });
+    if (pauseBtn && userPaused) { pauseBtn.setAttribute('aria-pressed', 'true'); $('use', pauseBtn).setAttribute('href', '#i-play'); }
+    stage.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(active + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); show(active - 1); }
+    });
+    stage.addEventListener('mouseenter', () => { hover = true; refresh(); });
+    stage.addEventListener('mouseleave', () => { hover = false; refresh(); });
+    cf.addEventListener('focusin', () => { focusIn = true; refresh(); });
+    cf.addEventListener('focusout', e => { if (!cf.contains(e.relatedTarget)) { focusIn = false; refresh(); } });
+    document.addEventListener('visibilitychange', refresh);
+    new IntersectionObserver(es => { visible = es[0].isIntersecting; refresh(); }, { threshold: 0.35 }).observe(stage);
 
-    // Mouse drag with momentum. Touch keeps native scrolling.
-    let down = false, startX = 0, startScroll = 0, lastX = 0, lastT = 0, vel = 0, moved = 0, glide = 0;
-    track.addEventListener('pointerdown', e => {
-      if (e.pointerType !== 'mouse' || e.button !== 0) return;
-      down = true; moved = 0; startX = lastX = e.clientX; startScroll = track.scrollLeft; lastT = performance.now(); vel = 0;
-      cancelAnimationFrame(glide);
-      track.setPointerCapture(e.pointerId);
-      track.classList.add('is-dragging');
-    });
-    track.addEventListener('pointermove', e => {
-      if (!down) return;
-      const now = performance.now();
-      const dx = e.clientX - startX;
-      moved = Math.max(moved, Math.abs(dx));
-      track.scrollLeft = startScroll - dx;
-      const dt = Math.max(1, now - lastT);
-      vel = 0.8 * vel + 0.2 * ((e.clientX - lastX) / dt);
-      lastX = e.clientX; lastT = now;
-    });
-    const release = e => {
+    // Swipe on touch and drag with a mouse.
+    let sx = 0, sy = 0, down = false, moved = false;
+    stage.addEventListener('pointerdown', e => { down = true; moved = false; sx = e.clientX; sy = e.clientY; });
+    stage.addEventListener('pointermove', e => { if (down && Math.abs(e.clientX - sx) > 8) moved = true; });
+    const end = e => {
       if (!down) return;
       down = false;
-      try { track.releasePointerCapture(e.pointerId); } catch (err) {}
-      let v = -vel * 16;
-      const stepFn = () => {
-        v *= 0.94;
-        track.scrollLeft += v;
-        if (Math.abs(v) > 0.5) glide = requestAnimationFrame(stepFn);
-        else {
-          track.classList.remove('is-dragging');
-          const s = cardStep();
-          track.scrollTo({ left: Math.round(track.scrollLeft / s) * s, behavior: 'smooth' });
-        }
-      };
-      glide = requestAnimationFrame(stepFn);
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) show(active + (dx < 0 ? 1 : -1));
+      setTimeout(() => { moved = false; }, 0);
     };
-    track.addEventListener('pointerup', release);
-    track.addEventListener('pointercancel', release);
-    track.addEventListener('click', e => { if (moved > 6) { e.preventDefault(); e.stopPropagation(); } }, true);
+    stage.addEventListener('pointerup', end);
+    stage.addEventListener('pointercancel', () => { down = false; });
+    show(0);
   }
 
   /* ---------- Timetable ---------- */
@@ -307,28 +308,49 @@
   const grid = $('#tt-grid'), tabs = $('#tt-tabs'), filters = $('#tt-filters'), nextEl = $('#tt-next');
   let filter = 'all', shownDay = null;
 
+  // Clock: the web server's Date header gives internet time, so a phone with the wrong clock still sees the right next class.
+  let clockOffset = 0;
+  function syncClock() {
+    const t0 = Date.now();
+    fetch(location.href.split('#')[0], { method: 'HEAD', cache: 'no-store' })
+      .then(r => {
+        const server = Date.parse(r.headers.get('date') || '');
+        if (!isNaN(server)) { clockOffset = server - (t0 + Date.now()) / 2; renderTimetable(); }
+      })
+      .catch(() => {});
+  }
   function bangkokNow() {
-    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Bangkok', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Bangkok', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date(Date.now() + clockOffset));
     const get = t => parts.find(p => p.type === t)?.value;
     const map = { Mon: 0, Tue: 1, Wed: 2, Thu: 3, Fri: 4, Sat: 5, Sun: 6 };
     return { day: map[get('weekday')], mins: (+get('hour') % 24) * 60 + +get('minute') };
   }
   const toMins = s => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
 
+  // The first class after now that matches the filter, looking up to a week ahead. Open Gym is not a class.
+  function findNext(now) {
+    for (let off = 0; off < 8; off++) {
+      const d = (now.day + off) % 7;
+      const hit = WEEK.find(s => s.d === d && (off > 0 || toMins(s.s) > now.mins) &&
+        (filter === 'all' ? s.c !== 'other' : s.c === filter));
+      if (hit) return { slot: hit, off, mins: off * 1440 + toMins(hit.s) - now.mins };
+    }
+    return null;
+  }
+
+  let userPickedDay = false;
   function renderTimetable() {
     if (!grid) return;
     const ui = UI[lang];
     const now = bangkokNow();
-    if (shownDay == null) shownDay = now.day;
+    const found = findNext(now);
+    const next = found ? found.slot : null;
+    if (!userPickedDay) shownDay = next && found.off <= 1 && next.d !== now.day && !WEEK.some(s => s.d === now.day && toMins(s.s) > now.mins) ? next.d : now.day;
 
-    const todays = WEEK.filter(s => s.d === now.day && toMins(s.s) > now.mins && s.c !== 'other');
-    let next = todays[0] || null, nextMsg = '';
-    if (next) nextMsg = ui.nextToday(next.n, next.s);
-    else {
-      const tmr = WEEK.filter(s => s.d === (now.day + 1) % 7 && s.c !== 'other')[0];
-      if (tmr) nextMsg = ui.nextTomorrow(tmr.n, tmr.s);
+    if (nextEl) {
+      nextEl.textContent = found ? ui.next(next.n, next.s, found.off, ui.days[next.d], ui.rel(found.mins)) : '';
+      nextEl.hidden = !found;
     }
-    if (nextEl) { nextEl.textContent = nextMsg; nextEl.hidden = !nextMsg; }
 
     filters.innerHTML = '';
     ['all', 'crossfit', 'hyrox', 'lifting', 'gym', 'kids', 'other'].forEach(k => {
@@ -346,7 +368,7 @@
       b.setAttribute('aria-selected', String(i === shownDay));
       b.textContent = name;
       if (i === now.day) { b.classList.add('is-today'); b.setAttribute('aria-label', `${ui.days[i]}, ${ui.today}`); }
-      b.addEventListener('click', () => { shownDay = i; renderTimetable(); });
+      b.addEventListener('click', () => { shownDay = i; userPickedDay = true; renderTimetable(); });
       tabs.appendChild(b);
     });
 
@@ -372,7 +394,9 @@
   applyLang(lang);
   layoutRail();
   onScroll();
-  setInterval(renderTimetable, 60000);
+  setInterval(renderTimetable, 30000);
+  syncClock();
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) syncClock(); });
 
   // If the intro module never runs (old browser, blocked script), show the page anyway.
   setTimeout(() => {
