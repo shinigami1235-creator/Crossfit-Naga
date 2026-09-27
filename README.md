@@ -12,7 +12,7 @@ Then open http://localhost:8000 in a browser.
 2. Confirm the coach details with each coach. They come from the Instagram introductions posted between November 2024 and September 2025, and FX is listed as CrossFit Level 2 from the crossfit.com gym page.
 3. Confirm the prices. They come from the PushPress plans page in September 2026: 5,500, 15,300, 29,400 and 54,000 THB.
 4. Confirm the timetable. It comes from the schedule image in the source folder.
-5. After the site has its address, change `og:image` in `index.html` to the full URL, for example `https://yourname.github.io/crossfit-naga/img/og.jpg`, since Facebook and LINE ignore a relative path for link previews.
+5. The link preview image points to `https://shinigami1235-creator.github.io/Crossfit-Naga/img/og.jpg`. Change `og:image` and `og:url` in `index.html` if the site moves to its own domain.
 
 ## Where things live
 
@@ -41,7 +41,7 @@ Every piece of text with a `data-i18n` name in `index.html` has a Thai version u
 
 ## The logo intro
 
-The intro plays once per browser session. Click, scroll or press any key to skip it. People who turn on reduced motion in their phone or computer settings skip it too. On a browser without WebGL it shows a flat version of the medallion.
+The intro plays every time the page loads. Click, scroll or press any key to skip it. Add `?nointro` to the address to open the page without it. People who turn on reduced motion in their phone or computer settings skip it too. On a browser without WebGL it shows a flat version of the medallion.
 
 ## Publishing on GitHub Pages
 

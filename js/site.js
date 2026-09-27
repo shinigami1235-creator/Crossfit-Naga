@@ -212,7 +212,6 @@
   if (cf) {
     const stage = $('.cf__stage', cf);
     const cards = $$('.cf__card', cf);
-    const panels = $$('.cf__panel', cf);
     const dots = $$('.cf__dot', cf);
     const countEl = $('[data-count]');
     const pauseBtn = $('#cf-pause');
@@ -230,10 +229,9 @@
         c.style.setProperty('--d', d);
         c.style.setProperty('--ad', Math.abs(d));
         c.classList.toggle('is-active', d === 0);
-        c.classList.toggle('is-far', Math.abs(d) > 2);
+        c.classList.toggle('is-far', Math.abs(d) > 1);
         c.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
       });
-      panels.forEach((p, k) => p.setAttribute('aria-hidden', k === active ? 'false' : 'true'));
       dots.forEach((d, k) => {
         d.classList.remove('is-active');
         d.classList.toggle('is-done', k < active);

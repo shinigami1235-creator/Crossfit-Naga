@@ -8,7 +8,6 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function heroIn() { doc.classList.add('hero-in'); document.body.classList.remove('intro-lock'); }
 function gone() {
   intro.classList.add('is-gone');
-  try { sessionStorage.setItem('naga-intro', '1'); } catch (e) {}
 }
 
 function hasWebGL() {

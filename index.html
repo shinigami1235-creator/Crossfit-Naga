@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="css/site.css">
 <script>
   document.documentElement.classList.add('js');
-  try { if (sessionStorage.getItem('naga-intro') === '1') document.documentElement.classList.add('intro-seen'); } catch (e) {}
+  if (/[?&]nointro\b/.test(location.search)) document.documentElement.classList.add('intro-seen');
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ExerciseGym","name":"CrossFit Naga","telephone":"+66809827029","email":"crossfitnaga.bkk@gmail.com","address":{"@type":"PostalAddress","streetAddress":"19 Soi Torsak 1, Khlong Tan Nuea","addressLocality":"Watthana, Bangkok","postalCode":"10110","addressCountry":"TH"},"sameAs":["https://www.instagram.com/crossfit_naga","https://www.facebook.com/p/Crossfit-Naga-61565654665492/"]}
@@ -257,71 +257,75 @@
       </header>
     </div>
     <div class="cf" role="region" aria-roledescription="carousel" aria-labelledby="coaches-title">
-      <div class="cf__stage" tabindex="0" aria-label="Coach photos. Use the arrow keys to change coach.">
-        <button class="cf__card" type="button" data-i="0" aria-label="Coach FX" tabindex="-1">
-          <img src="img/coach-fx.webp" alt="Coach FX, arms crossed, in front of the CrossFit Naga neon sign" width="720" height="960" loading="lazy" draggable="false">
-          <span class="coach__bar"><span>Coach FX</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
-        </button>
-        <button class="cf__card" type="button" data-i="1" aria-label="Coach Annika" tabindex="-1">
-          <img src="img/coach-annika.webp" alt="Coach Annika smiling in the gym" width="720" height="960" loading="lazy" draggable="false">
-          <span class="coach__bar"><span>Coach Annika</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
-        </button>
-        <button class="cf__card" type="button" data-i="2" aria-label="Coach Hakim" tabindex="-1">
-          <img src="img/coach-hakim.webp" alt="Coach Hakim in a tank top, arms crossed" width="720" height="960" loading="lazy" draggable="false">
-          <span class="coach__bar"><span>Coach Hakim</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
-        </button>
-        <button class="cf__card" type="button" data-i="3" aria-label="Coach Hansen" tabindex="-1">
-          <img src="img/coach-hansen.webp" alt="Coach Hansen in a white T-shirt under the CrossFit Naga neon sign" width="720" height="960" loading="lazy" draggable="false">
-          <span class="coach__bar"><span>Coach Hansen</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
-        </button>
-        <button class="cf__card" type="button" data-i="4" aria-label="Coach Palm" tabindex="-1">
-          <img src="img/coach-palm.webp" alt="Coach Palm smiling, arms crossed" width="720" height="960" loading="lazy" draggable="false">
-          <span class="coach__bar"><span>Coach Palm</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
-        </button>
-        <button class="cf__card" type="button" data-i="5" aria-label="Coach Sompriaw" tabindex="-1">
-          <img src="img/coach-sompriaw.webp" alt="Coach Sompriaw in the gym" width="720" height="960" loading="lazy" draggable="false">
-          <span class="coach__bar"><span>Coach Sompriaw</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
-        </button>
+      <div class="cf__stage" tabindex="0" aria-label="Coaches. Use the arrow keys to change coach.">
+        <article class="cf__card" data-i="0" aria-roledescription="slide" aria-label="Coach FX, 1 of 6">
+          <figure class="cf__photo">
+            <img src="img/coach-fx.webp" alt="Coach FX, arms crossed, in front of the CrossFit Naga neon sign" width="720" height="960" loading="lazy" draggable="false">
+            <span class="coach__bar"><span>Coach FX</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
+          </figure>
+          <div class="cf__body">
+            <p class="coach__role" data-i18n="c.fx.role">Owner · CrossFit Level 2</p>
+            <ul class="tags"><li data-i18n="t.crossfit">CrossFit</li><li data-i18n="t.muscle">Muscle gain</li><li data-i18n="t.fat">Fat loss</li></ul>
+            <p class="coach__bio" data-i18n="c.fx.bio">FX trained in Australia (Certificate III and IV in Sport and Fitness), the UK (Level 3 Personal Training) and France (BPJEPS Sport and Weightlifting), and holds Les Mills Grit. His favourite part is watching members push through a hard session.</p>
+          </div>
+        </article>
+        <article class="cf__card" data-i="1" aria-roledescription="slide" aria-label="Coach Annika, 2 of 6">
+          <figure class="cf__photo">
+            <img src="img/coach-annika.webp" alt="Coach Annika smiling in the gym" width="720" height="960" loading="lazy" draggable="false">
+            <span class="coach__bar"><span>Coach Annika</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
+          </figure>
+          <div class="cf__body">
+            <p class="coach__role" data-i18n="c.an.role">CrossFit Kids · Hybrid training</p>
+            <ul class="tags"><li data-i18n="t.hybrid">Functional &amp; hybrid</li><li data-i18n="t.kids">CrossFit Kids</li><li data-i18n="t.weight">Weight management</li></ul>
+            <p class="coach__bio" data-i18n="c.an.bio">Annika coaches members of every age, from CrossFit Kids to adults working on weight management. Expect a lot of energy in her classes.</p>
+          </div>
+        </article>
+        <article class="cf__card" data-i="2" aria-roledescription="slide" aria-label="Coach Hakim, 3 of 6">
+          <figure class="cf__photo">
+            <img src="img/coach-hakim.webp" alt="Coach Hakim in a tank top, arms crossed" width="720" height="960" loading="lazy" draggable="false">
+            <span class="coach__bar"><span>Coach Hakim</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
+          </figure>
+          <div class="cf__body">
+            <p class="coach__role" data-i18n="c.hk.role">Calisthenics · Handstands</p>
+            <ul class="tags"><li data-i18n="t.cali">Calisthenics</li><li data-i18n="t.hand">Handstand</li><li data-i18n="t.muscle">Muscle gain</li></ul>
+            <p class="coach__bio" data-i18n="c.hk.bio">Hakim teaches calisthenics, handstands and muscle building, starting from technique so you train without getting hurt.</p>
+          </div>
+        </article>
+        <article class="cf__card" data-i="3" aria-roledescription="slide" aria-label="Coach Hansen, 4 of 6">
+          <figure class="cf__photo">
+            <img src="img/coach-hansen.webp" alt="Coach Hansen in a white T-shirt under the CrossFit Naga neon sign" width="720" height="960" loading="lazy" draggable="false">
+            <span class="coach__bar"><span>Coach Hansen</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
+          </figure>
+          <div class="cf__body">
+            <p class="coach__role" data-i18n="c.hs.role">Chinese weightlifting</p>
+            <ul class="tags"><li data-i18n="t.wl">Weightlifting</li><li data-i18n="t.tech">Technique</li></ul>
+            <p class="coach__bio" data-i18n="c.hs.bio">Hansen has more than 10 years in Chinese weightlifting under Coach Jianping Ma, a former Chinese national athlete, and co-founded Ma Weightlifting in 2022. He is a biomechanics engineer and teaches beginners a clean foundation. His class runs Saturday at 15:30.</p>
+          </div>
+        </article>
+        <article class="cf__card" data-i="4" aria-roledescription="slide" aria-label="Coach Palm, 5 of 6">
+          <figure class="cf__photo">
+            <img src="img/coach-palm.webp" alt="Coach Palm smiling, arms crossed" width="720" height="960" loading="lazy" draggable="false">
+            <span class="coach__bar"><span>Coach Palm</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
+          </figure>
+          <div class="cf__body">
+            <p class="coach__role" data-i18n="c.pm.role">Sport and Health Science · CrossFit Level 1</p>
+            <ul class="tags"><li data-i18n="t.func">Functional training</li><li data-i18n="t.beg">CrossFit for beginners</li><li data-i18n="t.wl">Weightlifting</li><li data-i18n="t.fat">Fat loss</li></ul>
+            <p class="coach__bio" data-i18n="c.pm.bio">Palm started training to get stronger after getting sick often. He coaches gymnastics, weightlifting and weight loss, and spends most of his time on getting your technique right.</p>
+          </div>
+        </article>
+        <article class="cf__card" data-i="5" aria-roledescription="slide" aria-label="Coach Sompriaw, 6 of 6">
+          <figure class="cf__photo">
+            <img src="img/coach-sompriaw.webp" alt="Coach Sompriaw in the gym" width="720" height="960" loading="lazy" draggable="false">
+            <span class="coach__bar"><span>Coach Sompriaw</span><svg aria-hidden="true"><use href="#slashes"/></svg></span>
+          </figure>
+          <div class="cf__body">
+            <p class="coach__role" data-i18n="c.sp.role">Sports Science, Chulalongkorn · Pilates</p>
+            <ul class="tags"><li data-i18n="t.func">Functional training</li><li data-i18n="t.pilates">Pilates</li><li data-i18n="t.crossfit">CrossFit</li></ul>
+            <p class="coach__bio" data-i18n="c.sp.bio">Sompriaw has coached functional fitness for over 6 years and CrossFit for 2, and teaches Pilates. She plans training around moving better first and getting stronger on top of it.</p>
+          </div>
+        </article>
       </div>
       <div class="wrap">
-        <div class="cf__panels" aria-live="polite">
-        <article class="cf__panel" data-i="0" aria-roledescription="slide" aria-label="1 of 6">
-          <h3 class="cf__name">Coach FX</h3>
-          <p class="coach__role" data-i18n="c.fx.role">Owner · CrossFit Level 2</p>
-          <ul class="tags"><li data-i18n="t.crossfit">CrossFit</li><li data-i18n="t.muscle">Muscle gain</li><li data-i18n="t.fat">Fat loss</li></ul>
-          <p class="coach__bio" data-i18n="c.fx.bio">FX trained in Australia (Certificate III and IV in Sport and Fitness), the UK (Level 3 Personal Training) and France (BPJEPS Sport and Weightlifting), and holds Les Mills Grit. His favourite part is watching members push through a hard session.</p>
-        </article>
-        <article class="cf__panel" data-i="1" aria-roledescription="slide" aria-label="2 of 6" aria-hidden="true">
-          <h3 class="cf__name">Coach Annika</h3>
-          <p class="coach__role" data-i18n="c.an.role">CrossFit Kids · Hybrid training</p>
-          <ul class="tags"><li data-i18n="t.hybrid">Functional &amp; hybrid</li><li data-i18n="t.kids">CrossFit Kids</li><li data-i18n="t.weight">Weight management</li></ul>
-          <p class="coach__bio" data-i18n="c.an.bio">Annika coaches members of every age, from CrossFit Kids to adults working on weight management. Expect a lot of energy in her classes.</p>
-        </article>
-        <article class="cf__panel" data-i="2" aria-roledescription="slide" aria-label="3 of 6" aria-hidden="true">
-          <h3 class="cf__name">Coach Hakim</h3>
-          <p class="coach__role" data-i18n="c.hk.role">Calisthenics · Handstands</p>
-          <ul class="tags"><li data-i18n="t.cali">Calisthenics</li><li data-i18n="t.hand">Handstand</li><li data-i18n="t.muscle">Muscle gain</li></ul>
-          <p class="coach__bio" data-i18n="c.hk.bio">Hakim teaches calisthenics, handstands and muscle building, starting from technique so you train without getting hurt.</p>
-        </article>
-        <article class="cf__panel" data-i="3" aria-roledescription="slide" aria-label="4 of 6" aria-hidden="true">
-          <h3 class="cf__name">Coach Hansen</h3>
-          <p class="coach__role" data-i18n="c.hs.role">Chinese weightlifting</p>
-          <ul class="tags"><li data-i18n="t.wl">Weightlifting</li><li data-i18n="t.tech">Technique</li></ul>
-          <p class="coach__bio" data-i18n="c.hs.bio">Hansen has more than 10 years in Chinese weightlifting under Coach Jianping Ma, a former Chinese national athlete, and co-founded Ma Weightlifting in 2022. He is a biomechanics engineer and teaches beginners a clean foundation. His class runs Saturday at 15:30.</p>
-        </article>
-        <article class="cf__panel" data-i="4" aria-roledescription="slide" aria-label="5 of 6" aria-hidden="true">
-          <h3 class="cf__name">Coach Palm</h3>
-          <p class="coach__role" data-i18n="c.pm.role">Sport and Health Science · CrossFit Level 1</p>
-          <ul class="tags"><li data-i18n="t.func">Functional training</li><li data-i18n="t.beg">CrossFit for beginners</li><li data-i18n="t.wl">Weightlifting</li><li data-i18n="t.fat">Fat loss</li></ul>
-          <p class="coach__bio" data-i18n="c.pm.bio">Palm started training to get stronger after getting sick often. He coaches gymnastics, weightlifting and weight loss, and spends most of his time on getting your technique right.</p>
-        </article>
-        <article class="cf__panel" data-i="5" aria-roledescription="slide" aria-label="6 of 6" aria-hidden="true">
-          <h3 class="cf__name">Coach Sompriaw</h3>
-          <p class="coach__role" data-i18n="c.sp.role">Sports Science, Chulalongkorn · Pilates</p>
-          <ul class="tags"><li data-i18n="t.func">Functional training</li><li data-i18n="t.pilates">Pilates</li><li data-i18n="t.crossfit">CrossFit</li></ul>
-          <p class="coach__bio" data-i18n="c.sp.bio">Sompriaw has coached functional fitness for over 6 years and CrossFit for 2, and teaches Pilates. She plans training around moving better first and getting stronger on top of it.</p>
-        </article>
-        </div>
         <div class="cf__dots" role="group" aria-label="Choose a coach">
         <button class="cf__dot" type="button" data-i="0" aria-label="Coach FX"><span class="cf__dotname">FX</span><span class="cf__bar"><i></i></span></button>
         <button class="cf__dot" type="button" data-i="1" aria-label="Coach Annika"><span class="cf__dotname">Annika</span><span class="cf__bar"><i></i></span></button>
