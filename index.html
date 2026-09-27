@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preload" href="fonts/bigshoulders.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/anuphan-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v=20260927c">
 <script>
   document.documentElement.classList.add('js');
   if (/[?&]nointro\b/.test(location.search)) document.documentElement.classList.add('intro-seen');
@@ -134,21 +134,26 @@
           <span class="stair__n" aria-hidden="true">1</span>
           <h3 data-i18n="steps.1.t">Book a class</h3>
           <p data-i18n="steps.1.p">Pick a time on the booking calendar or message us on LINE. Drop-ins pay at the gym.</p>
+          <div class="stair__more"><a href="https://naga.pushpress.com/landing/calendar" target="_blank" rel="noopener" data-i18n="steps.1.a">Booking calendar</a><a href="https://lin.ee/SWHmCt1" target="_blank" rel="noopener">LINE</a></div>
         </li>
         <li class="stair__step" style="--i:1">
           <span class="stair__n" aria-hidden="true">2</span>
           <h3 data-i18n="steps.2.t">Start with CrossFit Basics</h3>
           <p data-i18n="steps.2.p">Basics runs Wednesday at 17:00 and Friday at 8:45, and covers the core movements before you join regular classes.</p>
+          <ul class="stair__more" role="list"><li data-i18n="steps.2.w">Wed 17:00</li><li data-i18n="steps.2.f">Fri 8:45</li></ul>
         </li>
         <li class="stair__step" style="--i:2">
           <span class="stair__n" aria-hidden="true">3</span>
           <h3 data-i18n="steps.3.t">Join the daily classes</h3>
           <p data-i18n="steps.3.p">CrossFit runs up to five times a day on weekdays, between 6:30 and 19:15.</p>
+          <p class="stair__label" data-i18n="steps.3.l">Weekday start times</p>
+          <ul class="stair__more" role="list"><li>6:30</li><li>7:30</li><li>8:45</li><li>17:00</li><li>18:15</li></ul>
         </li>
         <li class="stair__step" style="--i:3">
           <span class="stair__n" aria-hidden="true">4</span>
           <h3 data-i18n="steps.4.t">Pick your direction</h3>
           <p data-i18n="steps.4.p">Train for a Hyrox race, learn Olympic and Chinese weightlifting, get your first handstand, or compete with the team.</p>
+          <div class="stair__more"><a href="#classes">Hyrox</a><a href="#classes" data-i18n="steps.4.o">Olympic lifting</a><a href="#classes" data-i18n="steps.4.c">Chinese lifting</a><a href="#classes" data-i18n="steps.4.h">Handstands</a><a href="#crew" data-i18n="steps.4.team">Competition team</a></div>
         </li>
       </ol>
     </div>
@@ -400,6 +405,7 @@
       <p class="lede lede--ink" data-i18n="prices.lede">Every plan is All Access with unlimited classes. Drop-ins book online and pay at the gym.</p>
       <ol class="plans">
         <li class="plan" style="--i:0">
+          <span class="plan__tag" data-i18n="prices.t1">Start here</span>
           <h3 class="plan__len"><span class="num">1</span> <span data-i18n="prices.month">month</span></h3>
           <p class="plan__price"><span class="num">5,500</span> THB</p>
           <p class="plan__per" data-i18n="prices.p1">Pay month to month</p>
@@ -415,6 +421,7 @@
           <p class="plan__per" data-i18n="prices.p6">4,900 THB a month, 3,600 THB less than monthly</p>
         </li>
         <li class="plan plan--top" style="--i:3">
+          <span class="plan__tag plan__tag--neon" data-i18n="prices.t12">Lowest monthly price</span>
           <h3 class="plan__len"><span class="num">12</span> <span data-i18n="prices.months">months</span></h3>
           <p class="plan__price"><span class="num">54,000</span> THB</p>
           <p class="plan__per" data-i18n="prices.p12">4,500 THB a month, 12,000 THB less than monthly</p>
@@ -497,8 +504,8 @@
   <a class="btn btn--dockline" href="https://lin.ee/SWHmCt1" target="_blank" rel="noopener" aria-label="Chat on LINE"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><span>LINE</span></a>
 </div>
 
-<script src="js/i18n.js"></script>
-<script src="js/site.js"></script>
-<script type="module" src="js/boot-intro.js"></script>
+<script src="js/i18n.js?v=20260927c"></script>
+<script src="js/site.js?v=20260927c"></script>
+<script type="module" src="js/boot-intro.js?v=20260927c"></script>
 </body>
 </html>

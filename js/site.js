@@ -222,14 +222,28 @@
 
     function show(i) {
       active = (i + n) % n;
+      const wide = window.matchMedia('(min-width: 861px)').matches;
+      const cardW = cards[0].offsetWidth, cardH = cards[0].offsetHeight, photoW = cardH * 0.75;
       cards.forEach((c, k) => {
         let d = k - active;
         if (d > n / 2) d -= n;
         if (d < -n / 2) d += n;
+        const ad = Math.abs(d), sign = Math.sign(d);
+        const s = ad === 0 ? 1 : ad === 1 ? 0.84 : 0.72;
+        let tx = 0;
+        if (wide && ad) {
+          // Side cards show only their photo, tucked slightly behind the open card.
+          const vis1 = photoW * 0.84;
+          const target = sign * (cardW / 2 + vis1 * 0.32 + (ad - 1) * vis1 * 0.62);
+          tx = target + ((cardW - photoW) / 2) * s;
+        } else if (ad) tx = d * cardW * 0.92;
+        c.style.setProperty('--tx', tx.toFixed(1) + 'px');
+        c.style.setProperty('--s', wide || !ad ? s : 1 - ad * 0.08);
+        c.style.setProperty('--clip', wide && ad ? (cardW - photoW).toFixed(1) + 'px' : '0px');
         c.style.setProperty('--d', d);
-        c.style.setProperty('--ad', Math.abs(d));
+        c.style.setProperty('--ad', ad);
         c.classList.toggle('is-active', d === 0);
-        c.classList.toggle('is-far', Math.abs(d) > 1);
+        c.classList.toggle('is-far', ad > (wide ? 2 : 1));
         c.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
       });
       dots.forEach((d, k) => {
@@ -288,6 +302,7 @@
     stage.addEventListener('pointerup', end);
     stage.addEventListener('pointercancel', () => { down = false; });
     show(0);
+    window.addEventListener('resize', () => show(active));
   }
 
   /* ---------- Timetable ---------- */
