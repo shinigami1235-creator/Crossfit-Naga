@@ -54,7 +54,7 @@ if (!intro || doc.classList.contains('intro-seen')) {
   if (!hasWebGL()) flatOpen(700);
   else {
     const timeout = new Promise((_, rej) => setTimeout(() => rej(new Error('slow')), 3500));
-    Promise.race([import('./intro.js?v=20260927c'), timeout])
+    Promise.race([import('./intro.js?v=20260927d'), timeout])
       .then(mod => {
         if (skipped) return;
         intro.classList.add('is-3d');
